@@ -1,3 +1,6 @@
+liste = ["lkjlks", 3, 9.0]
+
+
 def find_(chain, searchKey):
     index = None
     for i in range(len(chain)):
@@ -20,14 +23,7 @@ def find_2(chain, search_key):
         if len(search_key) == 0:
             return -1
         if len(search_key) == 1:
-            for i in range(len(chain)):
-                if chain[i] == search_key:
-                    index = i
-                    break
-            if index is not None:
-                return index
-            else:
-                return -1
+            return find_(chain, search_key)
         if chain[i] == search_key[0]:
             count = 0
             for j in range(i, i + len(search_key)):
